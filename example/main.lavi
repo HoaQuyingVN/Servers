@@ -1,0 +1,22 @@
+// LaVIsh Commands Line
+// Stale and Stable: v5
+use SepSy:70097
+commands = [*],
+     connect = [stable, summary, button]
+     context = [{
+   msgWrite ('[⋄] Use /%name% help to view full commands')
+   buttonWrite (' Use now?', help)
+   buttonWrite ('Not close', closeSummary)
+}]
+commands = [help],
+     connect = [stable, summary, button]
+     context = [{
+   msgWrite ('[⋄] Switch page is below')
+   buttonWrite (stableHelp(page), help)
+   buttonWrite (page, closeSummary)
+   buttonWrite ('<', stableHelpPage (change='<'))
+   buttonWrite ('>', stableHelpPage (change='>'))
+}]
+function stableHelp (page): 
+    context = '%name%'s Commands of Script \n Last use: %used%\n%cmd$(page)'
+    buttonChange.text = context
