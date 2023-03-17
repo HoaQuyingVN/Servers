@@ -1,0 +1,25 @@
+// RawInit
+provent({
+   commands: search,
+   use: searchTerm([sources], term)
+})
+provent({
+   commands: link,
+   use: link([sources], term)
+})
+provent({
+   commands: unlink,
+   use: unlink([sources], term)
+})
+provent({
+   commands: list,
+   use: list([page])
+})
+provent({
+   commands: installed,
+   use: installed([page])
+})
+provent({
+   commands: help,
+   use: help([cmd])
+})
