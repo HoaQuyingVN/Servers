@@ -20,3 +20,6 @@ commands = [help],
 function stableHelp (page): 
     context = '%name%'s Commands of Script \n Last use: %used%\n%cmd$(page)'
     buttonChange.text = context
+function _event (event="Message::Perms"):
+    self.event.add(event)
+    self.event.prep(self.event.param.id(event), self.fetch(process.env[URL_DATA]), self.event.count (event))
